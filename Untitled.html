@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Food Industry User Interface and Experience (UI/UX) Design by Pavankumar</title>
+
+<style>
+
+body {
+  font-family: sans-serif;
+  background-color:#FF8C00; /* Fix typo in background-color */
+}
+
+header {
+  text-align: center;
+  padding: 20px 0;
+  background-color: #FF8C00;
+}
+
+header h1 {
+  font-size: 30px;
+  font-weight: bold;
+  text-align: center;
+}
+
+main {
+  width: 960px;
+  margin: 0 auto;
+
+}
+
+nav {
+  text-align: center; /* Center the navigation links */
+}
+
+nav a {
+  text-decoration: none;
+  color: #000000;
+  padding: 10px;
+}
+nav a:hover {
+  background-color: #808080;
+ /* Change background color on hover */
+  color: #fff; /* Change text color on hover */
+  transition: background-color 0.3s, color 0.3s; /* Smooth transition effect */
+  border-radius: 50px;
+}
+
+
+section {
+  padding: 20px;
+}
+
+#hero {
+  height: 500px;
+  background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLkQzrybhQlKNY1MIFZearQzUvKYnlrdQAhQ&usqp=CAU);
+  background-size: cover;
+  background: linear-gradient(to bottom, #301e8b, #6c5b7b);
+  shape-image-threshold: unset;
+
+}
+
+.caption {
+  text-align: center;
+  padding: 20px;
+}
+
+.caption h2 {
+  font-size: 24px;
+  font-weight: bold;
+  color: #fff;
+}
+
+.caption a {
+  text-decoration: none;
+  color: #fff;
+  background-color: #000;
+  padding: 10px 20px;
+  border-radius: 50px;
+}
+
+#menu {
+  padding-top: 50px;
+}
+
+#menu h2 {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+#menu ul {
+  list-style: none;
+  padding: 0;
+}
+
+.menu-items {
+  display: flex; /* Use flexbox for the container */
+  justify-content: 2 space-around; /* Distribute space between items */
+  border-color: #000000;
+
+}
+
+.menu-item {
+  flex: 2; /* Each menu item takes equal width */
+  background-color: #fff; /* Background color for the boxes */
+  padding: 50px; /* Padding for the boxes */
+  border-radius: 50px; /* Rounded corners for the boxes */
+  border-color: #000000;
+}
+
+/* Add the following styles at the end of your existing styles */
+
+.menu-item:hover {
+   background-color: #808080; /* Change the background color on hover */
+}
+
+.caption a:hover,     
+#contact a:hover {
+  background-color: #F5DEB3; /* Change the background color on hover for the buttons */
+  color: #fff; /* Change the text color on hover for the buttons */
+  transition: background-color 0.3s, color 0.3s; /* Add a smooth transition effect */
+}
+
+
+.menu-item h3 {
+  text-align: center; /* Center the heading */
+}
+
+#contact {
+  padding-top: 50px;
+}
+
+#contact h2 {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+#contact ul {
+  list-style: none;
+  padding: 0;
+}
+
+#contact li {
+  margin-bottom: 10px;
+}
+
+footer {
+  text-align: center;
+  color: #fff;
+  padding: 20px;
+  background-color: #301e8b;
+}
+
+
+</style>
+
+  <!-- <link rel="stylesheet" href="style.css"> -->
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+</head>
+<body>
+  <header>
+
+    
+    <h1>Food Industry User Interface and Experience (UI/UX) Design by Pavan</h1>
+    <nav>
+      <ul>
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Menu</a>
+        <a href="#">Contact</a>
+        <a href="login_manegment.html">Login</a>
+      </ul>
+    </nav>
+
+    <h3> 
+      <video data-v-5120ee6e="" data-v-7bbcc106="" autoplay="autoplay" muted="muted" preload="auto" playsinline="" height="456"  width="1000" style="max-width: 100%; height: auto; display: block; margin: auto auto 24px;"><source data-v-5120ee6e="" data-v-7bbcc106="" src="https://storage.googleapis.com/next21-assets/event-assets/24/home/homepage-banner-unlooped.2023-10-31.webm"><source data-v-5120ee6e="" data-v-7bbcc106="" src="https://storage.googleapis.com/next21-assets/event-assets/24/home/homepage-banner-unlooped.2023-10-31.mp4">
+      </video>
+      </h3>
+  </header>
+  <main>
+    <section id="hero">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTzcwHs2qYrm45laoVGQNiSA-cZs5wbfpV7gw&usqp=CAU" alt="Hero image">
+      <div class="caption">
+        <h2>Discover delectable cuisine <br> and unforgettable moments in our welcoming,<br> culinary haven.</h2>
+        <a href="/book-a-table">Book a Table</a>
+      </div>
+    </section>
+    <section id="menu">
+      <h2>Our Menu</h2>
+      <div class="menu-items">
+        <div class="menu-item">
+          <h3>Breakfast</h3>
+          <ul>
+
+            <h6>It replenishes your supply of glucose to boost your energy levels and alertness, while also providing other essential nutrients required for good health.</h6>
+            <br>
+
+            <a href="Orders_menu.html">Explore Menu</a>
+          </ul>
+        </div>
+        <div class="menu-item">
+          <h3>Main Dishes</h3>
+          <ul>
+         <h6>“A lunch with friends is an investment in lifelong memories.”</h6>
+         <br>
+
+          <a href="Lunch_menu.html">Explore Menu</a>
+
+          </ul>
+        </div>
+        <div class="menu-item">
+          <h3> ☕</h3>
+          <h3>Drinks</h3>
+
+          <ul>
+            <h6> First you take a drink, then the drink takes a drink, then the drink takes you.</h6>
+          <a href="Drinks_menu.html">Explore Menu</a>
+
+          </ul>
+        </div>
+        <div class="menu-item">
+          <h3>Desserts</h3>
+          <ul>
+            <h6> "Life is short, eat dessert first."</h6>
+            <br>
+
+            <a href="Dessert_menu.html">Explore Menu</a>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <section id="contact">
+      <h2>Contact Us</h2>
+      <ul>
+        <li>Address: 123 Main Pesu Boys_hostel Street, Benglore, CA 91234</li>
+        <li>Phone: (123) 456-7890</li>
+        <li>Email: info@foodindustryuixdesign.com</li>
+      </ul>
+      <a href="/contact-form">Contact Form</a>
+    </section>
+  </main>
+  <footer>
+    <p>Copyright &copy; 2023 Food Industry UI/UX Design by Pavankumar</p>
+  </footer>
+</body>
+</html>

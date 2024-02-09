@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Menu</title>
+    <!-- <link rel="stylesheet" type="text/css" href="style2.css"> -->
+    <style>
+        
+        body {
+            font-family: Arial, sans-serif;
+            background-color:#FFC0CB;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            text-align: center;
+            background-color: #FFA500;
+            color: #000000;
+            padding: 20px;
+            margin: 0;
+        }
+       
+        .menu {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .menu-item {
+            width: 30%;
+            margin: 10px;
+            padding: 10px;
+            border: 2px solid transparent;
+            border-radius: 50px;
+            text-align: center;
+            background-color: #000000;
+            background: linear-gradient(to bottom, #301e8b, #6c5b7b);
+            position: relative;
+            animation: twinklingBorder 2s linear infinite;
+
+        }
+
+        @keyframes twinklingBorder {
+            0% { border-color: #FF0000; }
+            25% { border-color: #00FF00; }
+            50% { border-color: #0000FF; }
+            75% { border-color: #FFFF00; }
+            100% { border-color: #00FFFF; }
+        }
+
+        .menu-item:hover {
+            background-color: #000000;
+        }
+
+        .menu-item img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 50px; /* Add border radius to the images */
+
+            
+        }
+
+        #order-list {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 10px;
+            margin-top: 20px;
+            background-color: #FFA500;
+        }
+
+        #total {
+            font-weight: bold;
+        }
+
+        #success-message {
+            display: none;
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+
+        #order-button {
+            background-color: #000000;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+    </style>
+    
+</head>
+
+<body>
+    <h1>Drinks....🥰!</h1>
+    <div class="menu">
+        <div class="menu-item">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQt0ITM88zmcfrFVU6vOuW15LxUT7VFYmXodA&usqp=CAU" alt="Veg Item 1" class="item-image">
+            <h2>Orange...🍊🍊</h2>
+            <p>Price: Rs 100</p>
+            <button onclick="addItem('Veg Item 1', 100)">Add to Order</button>
+        </div>
+        <div class="menu-item">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-lwnYYSxjcC2XWsitR31NmLfTVZyZAcE3gg&usqp=CAU" alt="Veg Item 2" class="item-image">
+            <h2>xyz...</h2>
+            <p>Price: Rs 150</p>
+            <button onclick="addItem(' Item 2', 150)">Add to Order</button>
+        </div>
+        <div class="menu-item">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXk_IG2hb9xANr55HYsvbuMGgTT1FoQ0Llfw&usqp=CAU" alt="Veg Item 3" class="item-image">
+            <h2> 7  UP 🤞</h2>
+            <p>Price: Rs 150</p>
+            <button onclick="addItem(' Item 3', 150)">Add to Order</button>
+        </div>
+        <div class="menu-item">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7Zqq3_3IU9AqyHmnPP6PBYLJO8U0hcF7vWg&usqp=CAU" alt="Veg Item 4" class="item-image">
+            <h2> Thumbs up....👍</h2>
+            <p>Price: Rs 150</p>
+            <button onclick="addItem(' Item 4', 150)">Add to Order</button>
+        </div>
+        <div class="menu-item">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQY4NVOs8B8_y7ekBx1ZIxEr0xntuvMMohWw&usqp=CAU" alt="Veg Item 5" class="item-image">
+            <h2> Lassiii...😋</h2>
+            <p>Price: Rs 150</p>
+            <button onclick="addItem(' Item 5', 150)">Add to Order</button>
+        </div>
+        <div class="menu-item">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQLizosF3BQvoFaj7l1JpaVT05iEEO20SewA&usqp=CAU" alt="Veg Item 6" class="item-image">
+            <h2> Strawberry...🍓🍓</h2>
+            <p>Price: Rs 150</p>
+            <button onclick="addItem(' Item 6', 150)">Add to Order</button>
+        </div>
+       
+        <!-- Add more items with images here -->
+    </div>
+    <div id="order-list">
+        <h2>Your Order:</h2>
+        <ul id="order-items"></ul>
+        <p id="total">Total: Rs 0</p>
+        <button id="order-button" onclick="showSuccessMessage()">Place Order</button>
+        <div id="success-message">Your order has been placed successfully!</div>
+    </div>
+
+    <script>
+        let orderItems = [];
+        let totalCost = 0;
+
+        function addItem(itemName, itemPrice) {
+            orderItems.push({ name: itemName, price: itemPrice });
+            totalCost += itemPrice;
+
+            const orderList = document.getElementById("order-items");
+            const totalElement = document.getElementById("total");
+
+            const item = document.createElement("li");
+            item.textContent = `${itemName} - Rs ${itemPrice}`;
+            orderList.appendChild(item);
+
+            totalElement.textContent = `Total: Rs ${totalCost}`;
+        }
+
+        function showSuccessMessage() {
+            const successMessage = document.getElementById("success-message");
+            successMessage.style.display = "block";
+        }
+
+    </script>
+</body>
+</html>
